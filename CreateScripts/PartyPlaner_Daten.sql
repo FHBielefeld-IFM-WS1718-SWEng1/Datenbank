@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 08. Dez 2017 um 14:00
+-- Erstellungszeit: 08. Dez 2017 um 14:14
 -- Server-Version: 5.7.20-0ubuntu0.16.04.1
 -- PHP-Version: 7.0.22-0ubuntu0.16.04.1
 
@@ -42,7 +42,9 @@ INSERT INTO `APIKey` (`ID`, `ApiKey`, `User_ID`) VALUES
 (9, 'OCpuZnCYr9n7wjFuqlAyIp5gPOxDtPmmzt_53DT9hGw', 22),
 (10, 'AqV0_rGPKeF3gtOtTfevGVJfwUjnq0s1VPcHkJ1LPHk', 23),
 (11, 'KbvzDsk_i6b6F5ATyC12F3HACh13x_4X-5zyqmX0_Xw', 23),
-(12, 'Kw59sJDomXyNLH6gap5uAlNCGhVNO0B-nzkjzRa4VzE', 23);
+(12, 'Kw59sJDomXyNLH6gap5uAlNCGhVNO0B-nzkjzRa4VzE', 23),
+(13, 'c1f-Z1JFoRlsRQ8uapZ8J-oJHVIisguEQzP1ok7jJNA', 22),
+(14, 'FN2d-GBoqOsKxdLCp2nUQMOZVqM5D6zlLtFaDUyLe70', 16);
 
 --
 -- Daten für Tabelle `Calculationitem`
