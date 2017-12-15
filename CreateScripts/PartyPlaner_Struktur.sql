@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 01. Dez 2017 um 12:29
+-- Erstellungszeit: 15. Dez 2017 um 11:40
 -- Server-Version: 5.7.20-0ubuntu0.16.04.1
 -- PHP-Version: 7.0.22-0ubuntu0.16.04.1
 
@@ -73,7 +73,7 @@ CREATE TABLE `Choice` (
   `Text` varchar(100) NOT NULL,
   `CreatedAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `ChangedAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `VotingID` int(11) NOT NULL
+  `Voting_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -98,9 +98,10 @@ CREATE TABLE `Comment` (
 --
 
 CREATE TABLE `Contactlist` (
+  `id` int(11) NOT NULL,
   `User_ID1` int(11) NOT NULL,
   `User_ID2` int(11) NOT NULL,
-  `Status` int(11) NOT NULL,
+  `Status` int(11) NOT NULL DEFAULT '0',
   `CreatedAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `ChangedAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -112,9 +113,10 @@ CREATE TABLE `Contactlist` (
 --
 
 CREATE TABLE `Guestlist` (
+  `ID` int(11) NOT NULL,
   `User_ID` int(11) NOT NULL,
   `Party_ID` int(11) NOT NULL,
-  `Status` int(11) NOT NULL,
+  `Status` int(11) NOT NULL DEFAULT '0',
   `CreatedAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `ChangedAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -132,8 +134,8 @@ CREATE TABLE `Party` (
   `StartDate` datetime NOT NULL,
   `EndDate` datetime DEFAULT NULL,
   `Location` varchar(100) NOT NULL,
-  `CreatedAt` datetime NOT NULL,
-  `ChangedAt` datetime NOT NULL,
+  `CreatedAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `ChangedAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `DeletedAt` datetime DEFAULT NULL,
   `User_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -196,7 +198,7 @@ CREATE TABLE `User` (
   `Name` varchar(50) NOT NULL,
   `Password` varchar(50) NOT NULL,
   `Birthdate` date DEFAULT NULL,
-  `Gender` varchar(5) DEFAULT NULL,
+  `Gender` int(11) DEFAULT NULL,
   `Profilepicture` varchar(100) DEFAULT NULL,
   `LoginAt` datetime DEFAULT NULL,
   `CreatedAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -211,6 +213,7 @@ CREATE TABLE `User` (
 --
 
 CREATE TABLE `UserChoice` (
+  `ID` int(11) NOT NULL,
   `User_ID` int(11) NOT NULL,
   `Choice_ID` int(11) NOT NULL,
   `CreatedAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -270,13 +273,13 @@ ALTER TABLE `Comment`
 -- Indizes für die Tabelle `Contactlist`
 --
 ALTER TABLE `Contactlist`
-  ADD PRIMARY KEY (`User_ID1`,`User_ID2`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indizes für die Tabelle `Guestlist`
 --
 ALTER TABLE `Guestlist`
-  ADD PRIMARY KEY (`User_ID`,`Party_ID`);
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indizes für die Tabelle `Party`
@@ -313,7 +316,7 @@ ALTER TABLE `User`
 -- Indizes für die Tabelle `UserChoice`
 --
 ALTER TABLE `UserChoice`
-  ADD PRIMARY KEY (`User_ID`,`Choice_ID`);
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indizes für die Tabelle `Voting`
@@ -329,57 +332,72 @@ ALTER TABLE `Voting`
 -- AUTO_INCREMENT für Tabelle `Answer`
 --
 ALTER TABLE `Answer`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT für Tabelle `APIKey`
 --
 ALTER TABLE `APIKey`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
 --
 -- AUTO_INCREMENT für Tabelle `Calculationitem`
 --
 ALTER TABLE `Calculationitem`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT für Tabelle `Choice`
 --
 ALTER TABLE `Choice`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT für Tabelle `Comment`
 --
 ALTER TABLE `Comment`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT für Tabelle `Contactlist`
+--
+ALTER TABLE `Contactlist`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT für Tabelle `Guestlist`
+--
+ALTER TABLE `Guestlist`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT für Tabelle `Party`
 --
 ALTER TABLE `Party`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=241125;
 --
 -- AUTO_INCREMENT für Tabelle `Rating`
 --
 ALTER TABLE `Rating`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT für Tabelle `Task`
 --
 ALTER TABLE `Task`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT für Tabelle `Todolistitem`
 --
 ALTER TABLE `Todolistitem`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT für Tabelle `User`
 --
 ALTER TABLE `User`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+--
+-- AUTO_INCREMENT für Tabelle `UserChoice`
+--
+ALTER TABLE `UserChoice`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT für Tabelle `Voting`
 --
 ALTER TABLE `Voting`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
