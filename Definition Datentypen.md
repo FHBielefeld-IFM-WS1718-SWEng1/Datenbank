@@ -49,7 +49,7 @@
 
 ### Gender
 
-- NULL : keine Angabe
-- 0 : männlich
-- 1 : weiblich
-- 2 : andere
+- 0 : keine Angabe
+- 1 : männlich
+- 2 : weiblich
+- 3 : andere
