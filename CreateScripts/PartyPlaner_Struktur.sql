@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 05. Jan 2018 um 09:07
+-- Erstellungszeit: 12. Jan 2018 um 18:47
 -- Server-Version: 5.7.20-0ubuntu0.16.04.1
 -- PHP-Version: 7.0.22-0ubuntu0.16.04.1
 
@@ -131,6 +131,7 @@ CREATE TABLE `Party` (
   `ID` int(11) NOT NULL,
   `Name` varchar(50) NOT NULL,
   `Description` text,
+  `Picture` varchar(100) DEFAULT NULL,
   `StartDate` datetime NOT NULL,
   `EndDate` datetime DEFAULT NULL,
   `Location` varchar(100) NOT NULL,
@@ -337,7 +338,7 @@ ALTER TABLE `Answer`
 -- AUTO_INCREMENT für Tabelle `APIKey`
 --
 ALTER TABLE `APIKey`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=306;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 --
 -- AUTO_INCREMENT für Tabelle `Calculationitem`
 --
@@ -357,22 +358,22 @@ ALTER TABLE `Comment`
 -- AUTO_INCREMENT für Tabelle `Contactlist`
 --
 ALTER TABLE `Contactlist`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 --
 -- AUTO_INCREMENT für Tabelle `Guestlist`
 --
 ALTER TABLE `Guestlist`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT für Tabelle `Party`
 --
 ALTER TABLE `Party`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=241128;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=241136;
 --
 -- AUTO_INCREMENT für Tabelle `Rating`
 --
 ALTER TABLE `Rating`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT für Tabelle `Task`
 --
@@ -382,12 +383,12 @@ ALTER TABLE `Task`
 -- AUTO_INCREMENT für Tabelle `Todolistitem`
 --
 ALTER TABLE `Todolistitem`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT für Tabelle `User`
 --
 ALTER TABLE `User`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 --
 -- AUTO_INCREMENT für Tabelle `UserChoice`
 --
